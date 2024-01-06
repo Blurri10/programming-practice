@@ -20,8 +20,26 @@ const randomClr = () => {
     const r = Math.floor(Math.random() * 255) + 1;
     const g = Math.floor(Math.random() * 255) + 1;
     const b = Math.floor(Math.random() * 255) + 1;
-    document.querySelector('#rgb').innerText = `RGB Values: (${r}, ${g}, ${b})`;
-    document.querySelector('.colorBox').style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+    return `(${r}, ${g}, ${b})`;
 }
 
-document.querySelector('#colorBtn').addEventListener('click', randomClr);
+document.querySelector('#colorBtn').addEventListener('click', () => {
+    document.querySelector('#rgb').innerText = `RGB Values: ${randomClr()}`;
+    document.querySelector('.colorBox').style.backgroundColor = `rgb${randomClr()}`;
+});
+
+
+document.querySelector('#commentSection').addEventListener('submit', function(a) {
+    a.preventDefault();
+    const userName = document.querySelector('#username');
+    const comment = document.querySelector('#commentBox');
+    const newItem1 = document.createElement("li");
+    const newItem2 = document.createElement("li");
+    newItem1.innerText = userName.value;
+    newItem2.innerText = comment.value;
+    document.querySelector('#comment').append(newItem1);
+    document.querySelector('#comment').append(newItem2);
+    document.querySelector('#comment').append(document.createElement("br"));
+    userName.value = "";
+    comment.value = "";
+})

@@ -3,3 +3,8 @@
     width: 4rem;
     border: 1px solid black;
 }
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
