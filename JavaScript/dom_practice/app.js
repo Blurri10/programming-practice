@@ -28,8 +28,8 @@ document.querySelector('#colorBtn').addEventListener('click', () => {
     document.querySelector('.colorBox').style.backgroundColor = `rgb${randomClr()}`;
 });
 
-
-document.querySelector('#commentSection').addEventListener('submit', function(a) {
+const commentSection = document.querySelector('#commentSection');
+commentSection.addEventListener('submit', function(a) {
     a.preventDefault();
     const userName = document.querySelector('#username');
     const comment = document.querySelector('#commentBox');
@@ -43,3 +43,11 @@ document.querySelector('#commentSection').addEventListener('submit', function(a)
     userName.value = "";
     comment.value = "";
 })
+
+//Event Bubbling Practice:
+
+const redDiv = document.querySelector('#red');
+const greenDiv = document.querySelector('#green');
+const blueDiv = document.querySelector('#blue');
+
+
